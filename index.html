@@ -1,152 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K-MAX 3D LAB</title>
-
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K-MAX 3D LAB — Brand Kit</title>
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+:root{--a:#EA580C;--d:#111;--bg:#f6f5f3;--fg:#161616;--pn:#fff;--bd:#e3e0dc;--mu:#6b6b6b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0e0f;--fg:#f3f1ee;--pn:#19191b;--bd:#2c2c2f;--mu:#9a9a9f}}
+:root[data-theme="dark"]{--bg:#0e0e0f;--fg:#f3f1ee;--pn:#19191b;--bd:#2c2c2f;--mu:#9a9a9f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:"Segoe UI",Inter,Arial,sans-serif;line-height:1.5}
+main{max-width:1100px;margin:auto;padding:20px 16px 60px}
+h1{font-size:clamp(26px,5vw,42px);margin:8px 0 4px;letter-spacing:-.5px}h1 b{color:var(--a)}
+h2{margin:44px 0 6px;font-size:22px;border-left:5px solid var(--a);padding-left:10px}
+p.s{color:var(--mu);margin:0 0 14px;font-size:14px}
+.panel{background:var(--pn);border:1px solid var(--bd);border-radius:14px;padding:14px;margin-top:14px}
+.ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+label{font-size:11px;color:var(--mu);display:block;text-transform:uppercase;letter-spacing:.6px}
+input,textarea{width:100%;padding:8px;border:1px solid var(--bd);border-radius:8px;background:var(--bg);color:var(--fg);font:inherit;font-size:14px}
+input[type=color]{padding:2px;height:38px}textarea{min-height:120px;font-size:13px}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-start}
+.fig{flex:1 1 300px;min-width:0}.fig small{display:block;color:var(--mu);font-size:12px;margin-top:6px}
+.tile{border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;border:1px solid var(--bd);overflow:hidden}
+.ic svg{display:block;width:100%;height:auto}
+.wm{display:flex;align-items:center;gap:12px}.wm .ic{width:84px;flex:none}
+.wt b{display:block;font-size:34px;font-weight:900;letter-spacing:-1px;line-height:1}.wt span{display:block;font-size:13px;font-weight:700;letter-spacing:7px;margin-top:4px}
+.card{aspect-ratio:7/4;border-radius:10px;container-type:inline-size;position:relative;overflow:hidden;padding:7cqw;box-shadow:0 6px 18px rgba(0,0,0,.18);width:100%}
+.card.dk{background:var(--d);color:#fff}.card.or{background:var(--a);color:#fff}.card.wh{background:#fff;color:#111}
+.card .ic{width:22cqw}.card .big{font-size:9cqw;font-weight:900;line-height:1}.card .sm{font-size:3.6cqw;line-height:1.55}
+.stripe{position:absolute;right:-8cqw;top:-8cqw;width:34cqw;height:34cqw;background:var(--a);transform:rotate(45deg);opacity:.9}
+.cn{position:absolute;inset:auto 7cqw 6cqw 7cqw}
+.dp{width:min(100%,240px);aspect-ratio:1;border-radius:50%;background:var(--d);display:flex;align-items:center;justify-content:center;border:6px solid var(--a);margin:auto;padding:18%}
+.dp.sq{border-radius:22%}
+.ban{aspect-ratio:16/5;container-type:inline-size;background:linear-gradient(120deg,var(--d) 55%,var(--a));border-radius:10px;display:flex;align-items:center;gap:4cqw;padding:0 6cqw;color:#fff;width:100%}
+.ban .ic{width:17cqw}.ban b{font-size:7cqw;font-weight:900;display:block;line-height:1}.ban span{font-size:2.6cqw;letter-spacing:.5cqw}
+.post{aspect-ratio:1;container-type:inline-size;background:var(--d);color:#fff;border-radius:10px;padding:8cqw;position:relative;overflow:hidden;width:100%}
+.post .big{font-size:12cqw;font-weight:900;line-height:1;margin:6cqw 0 3cqw}.post .big em{color:var(--a);font-style:normal}.post p{font-size:4cqw;margin:0;color:#ddd}.post .ic{width:16cqw}
+.tag{position:absolute;bottom:7cqw;left:8cqw;right:8cqw;background:var(--a);padding:3cqw;font-weight:800;font-size:4cqw;text-align:center;border-radius:2cqw}
+.cat{border:1px solid var(--bd);border-radius:14px;overflow:hidden;background:var(--pn);margin-top:14px}
+.cover{background:var(--d);color:#fff;padding:clamp(22px,6vw,56px);position:relative;overflow:hidden}
+.cover .ic{width:min(40%,200px)}.cover h3{font-size:clamp(26px,6vw,52px);margin:14px 0 4px;line-height:1.05}.cover h3 em{color:var(--a);font-style:normal}
+.cover::after{content:"";position:absolute;right:-60px;bottom:-60px;width:240px;height:240px;border:30px solid var(--a);transform:rotate(45deg);opacity:.5}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;padding:16px}
+.pr{border:1px solid var(--bd);border-radius:12px;overflow:hidden;background:var(--bg)}
+.pr .im{aspect-ratio:4/3;background:linear-gradient(135deg,var(--d),#333);display:flex;align-items:center;justify-content:center;position:relative}
+.pr .im svg{width:46%;fill:none;stroke:var(--a);stroke-width:5;stroke-linejoin:round}
+.pr .im i{position:absolute;top:8px;left:8px;background:var(--a);color:#fff;font:700 11px sans-serif;padding:2px 7px;border-radius:99px}
+.pr div.t{padding:10px}.pr b{display:block}.pr .pp{color:var(--a);font-weight:800;margin-top:4px}.pr small{color:var(--mu)}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:0 16px 16px}
+.feat div{border-left:4px solid var(--a);padding:6px 10px;background:var(--bg);border-radius:6px;font-size:14px}.feat b{display:block}
+.foot{background:var(--a);color:#fff;padding:20px;display:flex;flex-wrap:wrap;gap:8px 24px;font-weight:600}
+.stage{aspect-ratio:16/9;container-type:inline-size;background:var(--d);border-radius:12px;position:relative;overflow:hidden;width:100%;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.stage .ic{width:22cqw;position:relative;clip-path:inset(100% 0 0 0)}
+.stage .nm{font-size:9cqw;font-weight:900;letter-spacing:-.3cqw;opacity:0;margin-top:2cqw;line-height:1}.stage .nm em{color:var(--a);font-style:normal}
+.stage .tg{font-size:2.6cqw;letter-spacing:1cqw;opacity:0;margin-top:1.6cqw;color:#ddd}
+.stage .sw{position:absolute;left:0;right:0;height:.7cqw;background:var(--a);box-shadow:0 0 3cqw var(--a);top:100%;opacity:0}
+.stage .grd{position:absolute;inset:0;background:linear-gradient(var(--bd) 1px,transparent 1px) 0 0/6cqw 6cqw,linear-gradient(90deg,var(--bd) 1px,transparent 1px) 0 0/6cqw 6cqw;opacity:.12}
+.play .ic{animation:build 2.4s .3s ease-out forwards}.play .sw{animation:scan 2.4s .3s ease-out forwards}
+.play .nm{animation:fade .8s 3s forwards}.play .tg{animation:fade .8s 3.8s forwards}.play .ic{animation-name:build,pop}.play .ic{animation-duration:2.4s,.6s;animation-delay:.3s,2.8s;animation-fill-mode:forwards,none}
+@keyframes build{to{clip-path:inset(0 0 0 0)}}@keyframes scan{0%{top:100%;opacity:1}99%{opacity:1}100%{top:20%;opacity:0}}@keyframes fade{from{opacity:0;transform:translateY(2cqw)}to{opacity:1;transform:none}}@keyframes pop{50%{transform:scale(1.08)}}
+button{background:var(--a);color:#fff;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;font-size:14px;margin:10px 8px 0 0}
+.sw2{display:flex;flex-wrap:wrap;gap:10px}.sw2 div{width:110px;height:70px;border-radius:10px;padding:8px;font-size:12px;font-weight:700;border:1px solid var(--bd)}
+ol.sc{padding-left:20px;font-size:14px}ol.sc li{margin:4px 0}
+.ovx{overflow-x:auto}
+</style></head><body><main>
+<h1><b data-b="n1"></b> <span data-b="n2"></span> — Brand Kit</h1>
+<p class="s">Logo, cards, social media logos, premium catalog and YouTube intro. Everything below is parametric: change the fields and every design updates live.</p>
 
-body{
-    background:#f4f4f4;
-    color:#333;
-}
+<div class="panel"><div class="ctl">
+<div><label>Brand name</label><input id="n1" value="K-MAX"></div>
+<div><label>Second word</label><input id="n2" value="3D LAB"></div>
+<div><label>Tagline</label><input id="tag" value="Design. Print. Innovate."></div>
+<div><label>Owner name</label><input id="owner" value="Your Name"></div>
+<div><label>Role</label><input id="role" value="Founder"></div>
+<div><label>Phone / WhatsApp</label><input id="phone" value="+91 00000 00000"></div>
+<div><label>Email</label><input id="email" value="hello@kmax3dlab.com"></div>
+<div><label>Website</label><input id="web" value="www.kmax3dlab.com"></div>
+<div><label>Social handle</label><input id="ig" value="@kmax3dlab"></div>
+<div><label>Location</label><input id="city" value="Tamil Nadu, India"></div>
+<div><label>Accent colour</label><input id="ca" type="color" value="#ea580c"></div>
+<div><label>Dark colour</label><input id="cd" type="color" value="#111111"></div>
+</div>
+<div style="margin-top:10px"><label>Catalog products (one per line: Name | Price | Description) — sample prices, edit freely</label>
+<textarea id="prods">Phone Stand | ₹199 | Adjustable, multi-colour
+Desk Organizer | ₹399 | Pens, cards, clips
+Custom Name Plate | ₹349 | Your text, your colours
+Planter Vase | ₹299 | Modern geometric design
+Keychain | ₹99 | Personalised initials
+Cable Holder | ₹149 | Tidy desk, clean look
+Miniature Model | ₹599 | Gifts and display pieces
+Prototype Parts | Get a quote | Functional engineering parts</textarea></div></div>
 
-header{
-    background:linear-gradient(135deg,#007bff,#00c6ff);
-    color:white;
-    text-align:center;
-    padding:50px 20px;
-}
-
-header h1{
-    font-size:3rem;
-}
-
-header p{
-    margin-top:10px;
-    font-size:1.2rem;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:40px 0;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:20px;
-    color:#007bff;
-}
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    text-align:center;
-}
-
-.card h3{
-    color:#007bff;
-    margin-bottom:10px;
-}
-
-.contact{
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.btn{
-    display:inline-block;
-    margin-top:15px;
-    padding:12px 25px;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-    font-weight:bold;
-}
-
-.btn:hover{
-    background:#1da851;
-}
-
-footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:30px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>K-MAX 3D LAB</h1>
-    <p>Professional 3D Printing Services</p>
-</header>
-
-<div class="container">
-
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="services">
-
-        <div class="card">
-            <h3>PLA Parts</h3>
-            <p>High quality PLA printed components for engineering and hobby projects.</p>
-        </div>
-
-        <div class="card">
-            <h3>Prototype Models</h3>
-            <p>Rapid prototyping for product development and testing.</p>
-        </div>
-
-        <div class="card">
-            <h3>Custom Designs</h3>
-            <p>Custom 3D modeling and printing solutions as per customer requirements.</p>
-        </div>
-
-    </div>
-
+<h2>1 · Logo</h2><p class="s">Isometric enclosed printer with a K on the side and a print visible through the window — orange and black.</p>
+<div class="row">
+<div class="fig"><div class="tile" style="background:#fff;color:#111"><div class="wm"><i class="ic"></i><div class="wt"><b><span data-b="n1"></span></b><span data-b="n2"></span></div></div></div><small>Primary (light background)</small></div>
+<div class="fig"><div class="tile" style="background:var(--d);color:#fff"><div class="wm"><i class="ic"></i><div class="wt"><b><span data-b="n1"></span></b><span data-b="n2"></span></div></div></div><small>Reversed (dark background)</small></div>
+<div class="fig"><div class="tile" style="background:var(--a);color:#fff"><div class="wm"><i class="ic mono"></i><div class="wt"><b><span data-b="n1"></span></b><span data-b="n2"></span></div></div></div><small>On brand colour (mono)</small></div>
 </div>
 
-<div class="container">
-    <h2 class="section-title">Contact Us</h2>
+<h2>2 · Social media logos</h2><p class="s">Same artwork sized for each platform: round DP for Instagram, WhatsApp, Facebook, YouTube, LinkedIn; plus banner and post.</p>
+<div class="row">
+<div class="fig" style="flex-basis:200px"><div class="dp"><i class="ic" style="width:100%"></i></div><small>Profile picture (round)</small></div>
+<div class="fig" style="flex-basis:200px"><div class="dp sq"><i class="ic" style="width:100%"></i></div><small>App icon / square</small></div>
+<div class="fig" style="flex-basis:340px"><div class="post"><i class="ic"></i><div class="big">Print<br>your <em>idea</em></div><p data-b="tag"></p><div class="tag">Order on WhatsApp · <span data-b="phone"></span></div></div><small>Instagram / Facebook post</small></div>
+</div>
+<div class="fig" style="margin-top:14px"><div class="ban"><i class="ic"></i><div><b><span data-b="n1"></span> <span data-b="n2"></span></b><span data-b="tag"></span></div></div><small>YouTube banner / Facebook &amp; LinkedIn cover</small></div>
 
-    <div class="contact">
-        <p><strong>WhatsApp:</strong> +91 86670 44363</p>
-        <p><strong>Email:</strong> kmax3dlab@gmail.com</p>
-
-        <a class="btn" href="https://wa.me/918667044363" target="_blank">
-            Chat on WhatsApp
-        </a>
-    </div>
+<h2>3 · Cards</h2><p class="s">Visiting card (front and back), thank-you card and product tag.</p>
+<div class="row">
+<div class="fig"><div class="card dk"><div class="stripe"></div><div class="wm" style="margin-top:2cqw"><i class="ic"></i><div class="wt" style="font-size:.6em"><b style="font-size:9cqw"><span data-b="n1"></span></b><span style="font-size:3.2cqw;letter-spacing:1.4cqw" data-b="n2"></span></div></div><div class="cn sm" style="color:#ccc" data-b="tag"></div></div><small>Visiting card — front</small></div>
+<div class="fig"><div class="card or"><div class="big" style="font-size:6.5cqw" data-b="owner"></div><div class="sm" style="font-weight:700;opacity:.9" data-b="role"></div><div class="cn sm"><div>📞 <span data-b="phone"></span></div><div>✉ <span data-b="email"></span></div><div>🌐 <span data-b="web"></span></div><div>📍 <span data-b="city"></span></div></div></div><small>Visiting card — back</small></div>
+<div class="fig"><div class="card wh" style="text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center"><i class="ic" style="width:15cqw"></i><div class="big" style="font-size:7cqw;margin-top:2cqw">Thank you!</div><div class="sm" style="color:#555">Tag us <b style="color:var(--a)" data-b="ig"></b> and share your print.</div></div><small>Thank-you / packaging card</small></div>
+<div class="fig"><div class="card dk" style="aspect-ratio:7/4;display:flex;align-items:center;gap:5cqw"><i class="ic" style="width:24cqw"></i><div><div class="big" style="font-size:7cqw;color:var(--a)">Made at</div><div class="big" style="font-size:7cqw"><span data-b="n1"></span> <span data-b="n2"></span></div><div class="sm" style="color:#bbb;margin-top:2cqw">Printed on Bambu Lab A1 · <span data-b="phone"></span></div></div></div><small>Product tag / sticker</small></div>
 </div>
 
-<footer>
-    © 2026 K-MAX 3D LAB | All Rights Reserved
-</footer>
+<h2>4 · Premium innovative catalog</h2><p class="s">Cover, products, services and contact page. Edit the product list above.</p>
+<div class="cat">
+<div class="cover"><i class="ic"></i><h3><span data-b="n1"></span> <span data-b="n2"></span><br><em>Premium Catalog</em></h3><div data-b="tag" style="letter-spacing:3px;color:#ccc"></div><div style="margin-top:12px;color:#aaa;font-size:13px">Collection 2026–27 · 3D printing · Prototyping · Custom gifts</div></div>
+<div class="grid" id="grid"></div>
+<div class="feat">
+<div><b>Multi-colour printing</b>Up to 4 colours in one print with AMS lite</div>
+<div><b>Custom 3D prints</b>Send your idea or STL file and get a quote</div>
+<div><b>Prototyping</b>Fast functional parts for engineers and startups</div>
+<div><b>Materials</b>PLA, PETG and TPU options</div>
+<div><b>Order process</b>Share idea → Design review → Print → Delivery</div>
+<div><b>Quality promise</b>Clean layers, tested fit, careful packing</div>
+</div>
+<div class="foot"><span>📞 <span data-b="phone"></span></span><span>✉ <span data-b="email"></span></span><span>🌐 <span data-b="web"></span></span><span>📷 <span data-b="ig"></span></span><span>📍 <span data-b="city"></span></span></div>
+</div>
 
-</body>
-</html>
+<h2>5 · YouTube intro (6 seconds)</h2><p class="s">The logo is “printed” layer by layer, then the name and tagline appear. Record the player with your phone or screen recorder to use it as your video intro.</p>
+<div class="stage" id="stage"><div class="grd"></div><i class="ic"></i><div class="sw"></div><div class="nm"><span data-b="n1"></span> <em data-b="n2"></em></div><div class="tg" data-b="tag"></div></div>
+<button id="rp">▶ Replay intro</button>
+<div class="panel"><b>Storyboard &amp; voice-over</b><ol class="sc"><li>0.0–2.7s: scan line prints the logo from bottom to top (soft printer hum).</li><li>2.8s: logo pulses, name slides in.</li><li>3.8s: tagline fades in. Voice: “Welcome to <span data-b="n1"></span> <span data-b="n2"></span>.”</li><li>5–6s: hold, then cut to your first shot. Add end text: “Subscribe for new prints every week.”</li></ol></div>
+
+<h2>6 · Colours &amp; fonts</h2>
+<div class="sw2"><div style="background:var(--a);color:#fff">Accent<br><span id="hx1"></span></div><div style="background:var(--d);color:#fff">Dark<br><span id="hx2"></span></div><div style="background:#fff;color:#111">White<br>#FFFFFF</div><div style="background:#f3f1ee;color:#111">Warm grey<br>#F3F1EE</div></div>
+<p class="s" style="margin-top:12px">Headings: Segoe UI / Arial Black style bold, tight spacing. Body: Segoe UI regular. Keep the wordmark in capitals with wide letter-spacing for “3D LAB”.</p>
+</main>
+<script>
+var S={},R=document.documentElement;
+function icon(m){var a=m?'#fff':'var(--a)',k=m?'var(--a)':'var(--a)',l=m?'#fff':'#111';
+return '<svg viewBox="20 20 160 180"><polygon points="100,30 170,70 100,110 30,70" fill="'+(m?'#fff':'#444')+'"/><polygon points="30,70 100,110 100,190 30,150" fill="'+(m?'var(--d)':'#111')+'"/><polygon points="100,110 170,70 170,150 100,190" fill="'+a+'" '+(m?'opacity=".92"':'')+'/><g transform="matrix(1 .571 0 1 30 70)"><text x="14" y="64" font-size="66" font-weight="900" font-family="Arial Black,Arial,sans-serif" fill="'+(m?'#fff':a)+'">K</text></g><g transform="matrix(1 -.571 0 1 100 110)"><rect x="10" y="14" width="50" height="50" rx="3" fill="'+(m?'var(--a)':'#111')+'"/><rect x="20" y="44" width="30" height="5" fill="'+(m?'#fff':a)+'"/><rect x="23" y="37" width="24" height="5" fill="'+(m?'#fff':a)+'" opacity=".8"/><rect x="26" y="30" width="18" height="5" fill="'+(m?'#fff':a)+'" opacity=".6"/><rect x="33" y="19" width="4" height="9" fill="#fff"/></g></svg>'}
+var G=['<svg viewBox="0 0 60 60"><path d="M30 6l22 12v24L30 54 8 42V18z M8 18l22 12 22-12 M30 30v24"/></svg>','<svg viewBox="0 0 60 60"><rect x="14" y="8" width="32" height="44" rx="5"/><path d="M22 42h16"/></svg>','<svg viewBox="0 0 60 60"><path d="M18 10h24l-4 40H22z M16 10h28"/></svg>','<svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="9"/><path d="M30 8v8M30 44v8M8 30h8M44 30h8M14 14l6 6M40 40l6 6M46 14l-6 6M20 40l-6 6"/></svg>'];
+function render(){
+ ['n1','n2','tag','owner','role','phone','email','web','ig','city'].forEach(function(k){S[k]=document.getElementById(k).value});
+ R.style.setProperty('--a',document.getElementById('ca').value);R.style.setProperty('--d',document.getElementById('cd').value);
+ document.getElementById('hx1').textContent=document.getElementById('ca').value.toUpperCase();document.getElementById('hx2').textContent=document.getElementById('cd').value.toUpperCase();
+ document.querySelectorAll('[data-b]').forEach(function(e){e.textContent=S[e.getAttribute('data-b')]});
+ document.querySelectorAll('i.ic').forEach(function(e){e.innerHTML=icon(e.classList.contains('mono'))});
+ var h='';document.getElementById('prods').value.split('\n').forEach(function(l,i){var p=l.split('|').map(function(x){return x.trim()});if(!p[0])return;
+ h+='<div class="pr"><div class="im"><i>'+String(i+1).padStart(2,'0')+'</i>'+G[i%4]+'</div><div class="t"><b></b><small></small><div class="pp"></div></div></div>'});
+ var g=document.getElementById('grid');g.innerHTML=h;var n=0;
+ document.getElementById('prods').value.split('\n').forEach(function(l){var p=l.split('|').map(function(x){return x.trim()});if(!p[0])return;var c=g.children[n++];
+ c.querySelector('b').textContent=p[0];c.querySelector('small').textContent=p[2]||'';c.querySelector('.pp').textContent=p[1]||''});
+}
+document.querySelectorAll('input,textarea').forEach(function(e){e.addEventListener('input',render)});
+function play(){var s=document.getElementById('stage');s.classList.remove('play');void s.offsetWidth;s.classList.add('play')}
+document.getElementById('rp').onclick=play;render();play();
+</script></body></html>
